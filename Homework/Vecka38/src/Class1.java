@@ -26,8 +26,13 @@ public class Class1 {
 	int telefonnummer = scan.nextInt();
 	
 	
-	
-	
+	System.out.println("Information:");
+	System.out.println("Namn:" + namn);
+	System.out.println("Ålder:" + ålder);
+	System.out.println("Adress:" + adress);
+	System.out.println("Postnummer:" + postnummer);
+	System.out.println("Telefonnummer:" + telefonnummer);
+
 	
 	
 	}
