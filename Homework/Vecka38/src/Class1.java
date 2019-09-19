@@ -6,6 +6,9 @@ public class Class1 {
 		
 	Scanner scan = new Scanner(System.in);
 	
+	System.out.println("Vad heter du?");
+	String namn = scan.next();
+	
 	
 		
 		
