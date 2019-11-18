@@ -13,6 +13,7 @@ public class Main {
 		System.out.println(fahrenheitToCelsius(50));
 		System.out.println(kelvinToCelsius(0));
 		System.out.println(fluidPreassure(FluidTable.WATER,10));
+		System.out.println(pressureUnderWater(10));
 	}
 	
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -30,12 +31,16 @@ public class Main {
 	public static double fluidPreassure(FluidTable fluid, double deep) {
 		double fluidPressure = fluid.density * 	g_swe * deep;
 		return fluidPressure;
-
+		// Här är min tredje metod där jag räknar ut trycket under vatten på 10 meters djup
 	}
 	
+	public static double pressureUnderWater(double deep){
+		double pressureUnderWater = FluidTable.WATER.density * g_swe * deep;
+		return pressureUnderWater;
+		// Här är min fjärde metod som räknar ut trycket under vattnet på 10 meters djup
 
 	
-
+	}
 
 }
 
