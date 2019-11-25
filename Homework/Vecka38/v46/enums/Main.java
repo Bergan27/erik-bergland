@@ -22,6 +22,9 @@ public class Main {
 		System.out.println(volumeToMass(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
 		System.out.println(svtDistance(10,5));
+		System.out.println(svtTime(10,2));
+		System.out.println(work(50,10));
+	
 	}
 	
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -108,8 +111,20 @@ public class Main {
 		//Här är min tolfte metod som räknar ut sträckan från hastigheten och tiden
 	}
 	
-	public static double 
+	public static double svtTime(double velocity, double time) {
+		
+		double Time = velocity / time;
+		return Time;
+		// Metod nr 13 som räknar ut tiden från hasighet och sträcka
+	}
+	
+	public static double work(double force, double distance) {
+		double workAmount = force * distance;
+		return workAmount;
+	}
 }
+
+
 
 		
 
