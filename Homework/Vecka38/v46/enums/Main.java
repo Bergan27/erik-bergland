@@ -18,6 +18,7 @@ public class Main {
 		System.out.println(potentialEnergy(2,5));
 		System.out.println(fallSpeed(2.5));
 		System.out.println(delta(5,1));
+		System.out.println(volumeToMass(GasTable.AIR,1));
 	}
 	
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -74,6 +75,12 @@ public class Main {
 		double delta = (last - first);
 		return delta;
 		//Här är min åttånde metod där jag räknar ut det andra värdet minus det första
+	}
+	
+	public static double volumeToMass (GasTable gas, double volume ) {
+		
+		double airdensity = gas.density * volume;
+		return airdensity ;
 	}
 }
 
