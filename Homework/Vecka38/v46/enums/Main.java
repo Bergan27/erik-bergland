@@ -135,14 +135,26 @@ public class Main {
 		return temp;
 		// 17de metoden räknar ut temperaturen på ett föremål
 	}
-	
+	/**
+	 * 
+	 * @param fluid = The specific fluid being used
+	 * @param mass = The mass of the object
+	 * @param deltaT = The change in time
+	 * @return = The amount of energy required
+	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
 		
 		double flame = fluid.heatCapacity* mass * deltaT;
 		return flame;
 		//18de metoden som räknar ut mängden erergi som behövs för att värma ett föremål
 	}
-	
+	/**
+	 * 
+	 * @param gas = The specific gas 
+	 * @param mass = Mass of the object
+	 * @param deltaT = The change in time
+	 * @return = The amount of energy required
+	 */
 	public static double  heat(GasTable gas, double mass, double deltaT) {
 		
 		double burn = gas.heatCapacity * mass * deltaT;
