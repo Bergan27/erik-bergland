@@ -26,6 +26,7 @@ public class Main {
 		System.out.println(work(50,10));
 		System.out.println(heat(SolidTable.IRON,1,2));
 		System.out.println(heat(FluidTable.WATER,1,10));
+		System.out.println(heat(GasTable.AIR,1,1));
 	
 	}
 	
@@ -139,6 +140,13 @@ public class Main {
 		double flame = fluid.heatCapacity* mass * deltaT;
 		return flame;
 		//18de metoden som räknar ut mängden erergi som behövs för att värma ett föremål
+	}
+	
+	public static double  heat(GasTable gas, double mass, double deltaT) {
+		
+		double burn = gas.heatCapacity * mass * deltaT;
+		return burn; 
+		//19de metoden som räknar ut hur mycket energi som krävs för att värma en massa till
 	}
 }
 
