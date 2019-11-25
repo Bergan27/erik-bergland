@@ -24,6 +24,8 @@ public class Main {
 		System.out.println(svtDistance(10,5));
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
+		System.out.println(heat(SolidTable.IRON,1,2));
+		System.out.println(heat(FluidTable.WATER,1,10));
 	
 	}
 	
@@ -119,8 +121,24 @@ public class Main {
 	}
 	
 	public static double work(double force, double distance) {
+		
 		double workAmount = force * distance;
 		return workAmount;
+		//16 de metoden som räknar ut storlekten på jobbet som utförs
+	}
+	
+	public static double  heat(SolidTable solid, double mass, double deltaT) {
+		
+		double temp = solid.heatCapacity* mass * deltaT;
+		return temp;
+		// 17de metoden räknar ut temperaturen på ett föremål
+	}
+	
+	public static double heat(FluidTable fluid, double mass, double deltaT) {
+		
+		double flame = fluid.heatCapacity* mass * deltaT;
+		return flame;
+		//18de metoden som räknar ut mängden erergi som behövs för att värma ett föremål
 	}
 }
 
