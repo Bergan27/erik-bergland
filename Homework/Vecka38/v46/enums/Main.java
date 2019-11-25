@@ -21,7 +21,7 @@ public class Main {
 		System.out.println(volumeToMass(GasTable.AIR,1));
 		System.out.println(volumeToMass(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
-		System.out.println(svtDistance(10,2));
+		System.out.println(svtDistance(10,5));
 	}
 	
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -103,10 +103,12 @@ public class Main {
 	
 	public static double svtDistance(double velocity, double time) {
 		
-		double distance = velocity / time;
+		double distance = velocity * time;
 		return distance;
 		//Här är min tolfte metod som räknar ut sträckan från hastigheten och tiden
 	}
+	
+	public static double 
 }
 
 		
