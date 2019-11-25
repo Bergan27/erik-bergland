@@ -27,6 +27,7 @@ public class Main {
 		System.out.println(heat(SolidTable.IRON,1,2));
 		System.out.println(heat(FluidTable.WATER,1,10));
 		System.out.println(heat(GasTable.AIR,1,1));
+		System.out.println(velocityToHeight(9.82));
 	
 	}
 	
@@ -147,6 +148,13 @@ public class Main {
 		double burn = gas.heatCapacity * mass * deltaT;
 		return burn; 
 		//19de metoden som räknar ut hur mycket energi som krävs för att värma en massa till
+	}
+	
+	public static double velocityToHeight(double velocity) {
+		
+		double height = (Math.pow(Math.sin(1.570796),2 )* Math.pow(velocity, 2))/ (2*g_swe);
+		return height;
+		//20de metoden som räknar ut hur snabbt ett föremål kommer att färdas från en höj neråt
 	}
 }
 
