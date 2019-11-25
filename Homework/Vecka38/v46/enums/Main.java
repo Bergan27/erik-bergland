@@ -20,6 +20,8 @@ public class Main {
 		System.out.println(delta(5,1));
 		System.out.println(volumeToMass(GasTable.AIR,1));
 		System.out.println(volumeToMass(SolidTable.IRON,1));
+		System.out.println(svtVelocity(10,5));
+		System.out.println(svtDistance(10,2));
 	}
 	
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -89,8 +91,22 @@ public class Main {
 		
 		double massdensity = solid.density * volume;
 		return massdensity;
+		//Här har jag min tionde metod som räknar ut vikten från volymne och densiteten
 	}
 	
+	public static double svtVelocity(double distance, double time) {
+		
+		double speed = distance / time;
+		return speed;
+		//Här är min elfte metod som räknar ut medelhastigheten
+	}
+	
+	public static double svtDistance(double velocity, double time) {
+		
+		double distance = velocity / time;
+		return distance;
+		//Här är min tolfte metod som räknar ut sträckan från hastigheten och tiden
+	}
 }
 
 		
