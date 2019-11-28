@@ -30,7 +30,7 @@ public class Main {
 		System.out.println(velocityToHeight(9.82));
 		System.out.println(volumeToMass(SolidTable.IRON,6));
 		System.out.println(svtDistance(2.7,3000));
-		
+		System.out.println(heat(FluidTable.WATER,4,78));
 	}
 	/**
 	 * 
@@ -200,7 +200,7 @@ public class Main {
 	 * 
 	 * @param solid = The material and its capabilities 
 	 * @param mass = The mass off the object
-	 * @param deltaT = The change in time
+	 * @param deltaT = The change in temperature
 	 * @return
 	 */
 	public static double  heat(SolidTable solid, double mass, double deltaT) {
@@ -213,7 +213,7 @@ public class Main {
 	 * 
 	 * @param fluid = The specific fluid being used
 	 * @param mass = The mass of the object
-	 * @param deltaT = The change in time
+	 * @param deltaT = The change in temperature
 	 * @return = The amount of energy required
 	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
