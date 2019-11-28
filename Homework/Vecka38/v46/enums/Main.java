@@ -29,7 +29,8 @@ public class Main {
 		System.out.println(heat(GasTable.AIR,1,1));
 		System.out.println(velocityToHeight(9.82));
 		System.out.println(volumeToMass(SolidTable.IRON,6));
-	
+		System.out.println(svtDistance(2.7,3000));
+		
 	}
 	/**
 	 * 
