@@ -28,6 +28,7 @@ public class Main {
 		System.out.println(heat(FluidTable.WATER,1,10));
 		System.out.println(heat(GasTable.AIR,1,1));
 		System.out.println(velocityToHeight(9.82));
+		System.out.println(volumeToMass(SolidTable.IRON,6));
 	
 	}
 	/**
@@ -244,6 +245,8 @@ public class Main {
 		return height;
 		//20de metoden som räknar ut hur snabbt ett föremål kommer att färdas från en höj neråt
 	}
+	
+	
 }
 
 
