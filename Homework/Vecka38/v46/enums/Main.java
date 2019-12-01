@@ -46,6 +46,8 @@ public class Main {
 		System.out.println(joule(5));
 		System.out.println(newton(92));
 		System.out.println(haste(25));
+		System.out.println(mechanicalEnergy(27,42));
+		System.out.println(brakeDistance(0.3,100));
 	}
 	
 
@@ -297,7 +299,7 @@ public class Main {
 	public static double acceleration(double work, double time) {
 		double acceleration = work / time;
 		return acceleration;
-       // Fråga 6 / Egen metod 1
+       // Fråga 6 / Egen metod 1 som räkar ut accelarationen
 	}
 	/**
 	 *  
@@ -307,7 +309,7 @@ public class Main {
 	public static double kMpHConvert(double kMpH) {
 		double velocityMpS = kMpH / 3.6;
 		return velocityMpS;
-		//Fråga 6 / Egen metod 2
+		//Fråga 6 / Egen metod 2 som räknar ut hastigeten i meter per sekund
 	}
 	/**
 	 * 
@@ -318,7 +320,7 @@ public class Main {
 	public static double force(double acceleration, double mass) {
 		double force = acceleration * mass;
 		return force;
-		//Fråga 6 / Egen metod 3
+		//Fråga 6 / Egen metod 3 som räknar ut kraften för acceleartionen
 	}
 	/**
 	 * 
@@ -329,7 +331,7 @@ public class Main {
 	public static double distance(double time, double acceleration) {
 		double distance = (acceleration * Math.pow(time, 2)) / 2;
 		return distance;
-		//Fråga 6 / Egen metod 4
+		//Fråga 6 / Egen metod 4 som räknar ut sträckan
 	}
 	/**
 	 *
@@ -348,32 +350,60 @@ public class Main {
 			bounceCount++;
 		}
 			return bounceCount;
-			//Fråga 7 / Egen metod 5
+			//Fråga 7 / Egen metod 5som räknar ut antal studs en kula på 1kg gör innan den inte kommer över 0.5m över marken då den tappar 1% av sin energi
 	}
-	
+	/**
+	 * 
+	 * @param newtonM = Newtonmeters
+	 * @return
+	 */
 	public static double joule(double newtonM) {
 		double joule = newtonM;
 		return joule;
-		//Egen metod 6 / fråga 1
+		//Egen metod 6 / fråga 1 som konverterar nm till j
     }
-	
+	/**
+	 * 
+	 * @param kg = The mass in Kilos
+	 * @return
+	 */
 	public static double newton(double kg) {
 		double weight = kg * g_swe;
 		return weight;
 		//Egen metod 7 / fråga 2
 	}
-	
+	/**
+	 * 
+	 * @param meterpersecond = Meters the object travels per second
+	 * @return
+	 */
 	public static double haste(double meterpersecond) {
 		double rate = meterpersecond * 3.6;
 		return rate;
-		
+		//Egen metod 8 / fråga 3 som räknar ut km/h från m/s
 	}
-	
-	
-	
-	
-	
-	
+	/**
+	 * 
+	 * @param kineticenergy = The kineticEnergy of the object
+	 * @param modeEnergy = The modeEnergy of the object
+	 * @return
+	 */
+	public static double mechanicalEnergy(double kineticenergy, double modeEnergy) {
+		double mEnergy = kineticenergy + modeEnergy;
+		return mEnergy;
+		//Egen metod 9
+	}
+	/**
+	 * 
+	 * @param brakeForce = The force that is applyed to the tire by the brakes
+	 * @param distance = The distance the object travels
+	 * @return
+	 */
+	public static double brakeDistance(double brakeForce, double distance) {
+		double tires = distance * brakeForce;
+		return tires;
+		//Egen metod 10
+	}
 	
 }
 
