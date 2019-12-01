@@ -32,6 +32,7 @@ public class Main {
 		System.out.println(svtDistance(2.7,3000));
 		System.out.println(heat(FluidTable.WATER,4,78));
 		System.out.println(fluidPreassure(FluidTable.WATER,75));
+		System.out.println(velocityToHeight(16.6666667));
 	}
 	/**
 	 * 
@@ -245,7 +246,7 @@ public class Main {
 		
 		double height = (Math.pow(Math.sin(1.570796),2 )* Math.pow(velocity, 2))/ (2*g_swe);
 		return height;
-		//20de metoden som räknar ut hur snabbt ett föremål kommer att färdas från en höj neråt
+		//20de metoden som räknar ut hur snabbt ett föremål kommer att färdas uppåt med en viss hastighet
 	}
 	
 	
