@@ -6,34 +6,49 @@ public class Main {
 	static double R  = (8.3145) ; 						// Almänna gaskonstanten.
 	static double p0 = (1000)  ; 						// lufttrycket vid havsytan.
 	static double c = (2.99792458)  ; 					// Ljusets hastighet i vakum.
-	static double g_swe = (9.82) ; 						//Tyngdaccelerationen för Sverige.
-
-	public static void main(String[] args) {
+	static double g_swe = (9.82) ; 						//Tyngdaccelerationen för Sverige. 		
+	
+	// Egen fråga 1 / Hur många newtonmeter (NM) motsvarar 5J (Joule)?
+	// Egen fråga 2 / Hur många N i vikt motsvarar 92kg?
+	// Egen fråga 3 / Hur stor hastighet motsvarar 25m/s i km/h?
+	
+	public static void main(String [] args) {
 		
-		System.out.println(fahrenheitToCelsius(50));
-		System.out.println(kelvinToCelsius(0));
-		System.out.println(fluidPreassure(FluidTable.WATER,10));
-		System.out.println(pressureUnderWater(10));
-		System.out.println(kineticEnergy(2,2));
-		System.out.println(potentialEnergy(2,5));
-		System.out.println(fallSpeed(2.5));
-		System.out.println(delta(5,1));
-		System.out.println(volumeToMass(GasTable.AIR,1));
-		System.out.println(volumeToMass(SolidTable.IRON,1));
-		System.out.println(svtVelocity(10,5));
-		System.out.println(svtDistance(10,5));
-		System.out.println(svtTime(10,2));
-		System.out.println(work(50,10));
-		System.out.println(heat(SolidTable.IRON,1,2));
-		System.out.println(heat(FluidTable.WATER,1,10));
-		System.out.println(heat(GasTable.AIR,1,1));
-		System.out.println(velocityToHeight(9.82));
-		System.out.println(volumeToMass(SolidTable.IRON,6)); //* Här och neråt är frågorna
-		System.out.println(svtDistance(2.7,3000));
-		System.out.println(heat(FluidTable.WATER,4,78));
-		System.out.println(fluidPreassure(FluidTable.WATER,75));
-		System.out.println(velocityToHeight(16.6666667));
+		System.out.println(fahrenheitToCelsius(50));              //1
+		System.out.println(kelvinToCelsius(0));                   //2
+		System.out.println(fluidPreassure(FluidTable.WATER,10));  //3
+		System.out.println(pressureUnderWater(10));               //4
+		System.out.println(kineticEnergy(2,2));                   //5
+		System.out.println(potentialEnergy(2,5));                 //6
+		System.out.println(fallSpeed(2.5));                       //7
+		System.out.println(delta(5,1));                           //8
+		System.out.println(fMass(FluidTable.WATER,1));            //9
+		System.out.println(volumeToMass(GasTable.AIR,1));         //10
+		System.out.println(volumeToMass(SolidTable.IRON,1));      //11
+		System.out.println(svtVelocity(10,5));                    //12
+		System.out.println(svtDistance(10,5));                    //13
+		System.out.println(svtTime(10,2));                        //14
+		System.out.println(work(50,10));                          //15
+		System.out.println(power(1000,2));                        //16
+		System.out.println(heat(SolidTable.IRON,1,2));            //17
+		System.out.println(heat(FluidTable.WATER,1,10));          //18
+		System.out.println(heat(GasTable.AIR,1,1));               //19
+		System.out.println(velocityToHeight(9.82));               //20
+		System.out.println(volumeToMass(SolidTable.IRON,6));      //Fråga 1
+		System.out.println(svtDistance(2.7,3000));                //Fråga 2
+		System.out.println(heat(FluidTable.WATER,4,78));          //Fråga 3
+		System.out.println(fluidPreassure(FluidTable.WATER,75));  //Fråga 4
+		System.out.println(velocityToHeight(16.67));              //Fråga 5
+		System.out.println(power(work(force(735, acceleration     //Fråga 6
+			(kMpHConvert(100),4.8)),distance(4.8, acceleration
+			(kMpHConvert(100),4.8))), 4.8));
+		System.out.println(bounceCount(12, 1));					  //Fråga 7
+		System.out.println(joule(5));
+		System.out.println(newton(92));
+		System.out.println(haste(25));
 	}
+	
+
 	/**
 	 * 
 	 * @param fahrenheit = A form of measuring degrees or heat/cold 
@@ -43,7 +58,7 @@ public class Main {
 		
 		double celsius = (fahrenheit - 32) * 5 / 9;
 		return celsius;
-		// Här är den första metoden där jag räknar ut  hur många grader celcius om det är 50 grader fahrenheit
+		// 1 En metod som gör om grader fahrenheit till grader celcius.
 	}
 	/**
 	 * 
@@ -54,7 +69,7 @@ public class Main {
 		
 		double celsius = (kelvin - 273.15);
 		return celsius;
-		// Här är min andra metod där jag räknar ut hur många grader celcius det är om det är -273.15 grader kelvin
+		// 2 En metod som gör om grader kelvin till grader celcius.
 	}
 	/**
 	 * 
@@ -66,7 +81,7 @@ public class Main {
 		
 		double fluidPressure = fluid.density * 	g_swe * deep;
 		return fluidPressure;
-		// Här är min tredje metod där jag räknar ut trycket under vatten på 10 meters djup
+		// 3 En metod som räknar ut vätsketrycket i en vätska vid ett visst djup.
 	}
 	/**
 	 * 
@@ -77,7 +92,7 @@ public class Main {
 		
 		double pressureUnderWater = FluidTable.WATER.density * g_swe * deep;
 		return pressureUnderWater;
-		// Här är min fjärde metod som räknar ut trycket under vattnet på 10 meters djup
+		// 4 En metod som räknar ut vätsketrycket i vatten vid ett visst djup.
 	}
 	/**
 	 * 
@@ -89,7 +104,7 @@ public class Main {
 		
 		double kineticEnergy = (mass * Math.pow(velocity, 2 )) / 2;
 		return kineticEnergy ;
-		//Här är min femte medod som räknar ut den kinetiska energin för ett föremål med en hastighet
+		//5 En metod som räknar ut kinetisk energi med hjälp av massa och hastighet.
 	}
 	/**
 	 * 
@@ -101,7 +116,7 @@ public class Main {
 		
 		double potentialEnergy = mass * g_swe * height;
 		return potentialEnergy;
-		//Här är min sjätte metod där jag räkanar ut den potensiella energin för ett föremål
+		//6 En metod som räknar ut potentiell energi med hjälp av massa och höjd.
 	}
 	/**
 	 * 
@@ -112,7 +127,7 @@ public class Main {
 		
 		double fallSpeed = Math.sqrt(2 * g_swe * height);
 		return fallSpeed;
-		//Här är min sjunde metod där jag räkar ut hastigheten på ett fallande objekt
+		//7 En metod som räknar ut hur hög hastighet man kommer upp i som man släpper ett föremål från en viss höjd.
 	}
 	/**
 	 * 
@@ -124,7 +139,20 @@ public class Main {
 		
 		double delta = (last - first);
 		return delta;
-		//Här är min åttånde metod där jag räknar ut det andra värdet minus det första
+		//8 En metod som räknar ut skillnad mellan två givna värden.
+	}
+	/**
+	 * 
+	 * @param fluid = The fluid
+	 * @param volume = The volume
+	 * @return
+	 */
+	
+	public static double fMass (FluidTable fluid, double volume) {
+		
+		double fMass = fluid.density* volume;
+		return fMass;
+		//9 En metod som gör om en viss volym av vätska till en massa.
 	}
 	/**
 	 * 
@@ -135,9 +163,9 @@ public class Main {
 	public static double volumeToMass (GasTable gas, double volume ) {
 		
 		double airdensity = gas.density * volume;
-		return airdensity ;
-		//Här är min nionde metod där jag räknar ut massan 
+		return airdensity;
 	}
+		//10 En metod som gör om en viss volym av gas till en massa.
 	/**
 	 * 
 	 * @param solid = The material and its capabilities 
@@ -148,7 +176,7 @@ public class Main {
 		
 		double massdensity = solid.density * volume;
 		return massdensity;
-		//Här har jag min tionde metod som räknar ut vikten från volymne och densiteten
+		//11 En metod som gör om en viss volym av materia till en massa.
 	}
 	/**
 	 * 
@@ -160,7 +188,7 @@ public class Main {
 		
 		double speed = distance / time;
 		return speed;
-		//Här är min elfte metod som räknar ut medelhastigheten
+		//12 En metod som räknar ut medelhastigheten med hjälp av sträcka och tid
 	}
 	/**
 	 * 
@@ -172,7 +200,7 @@ public class Main {
 		
 		double distance = velocity * time;
 		return distance;
-		//Här är min tolfte metod som räknar ut sträckan från hastigheten och tiden
+		//13 En metod som räknar ut sträcka med hjälp av hastighet och tid.
 	}
 	/**
 	 * 
@@ -184,8 +212,9 @@ public class Main {
 		
 		double Time = velocity / time;
 		return Time;
-		// Metod nr 13 som räknar ut tiden från hasighet och sträcka
+		//14 En metod som räknar ut tid för hjälp av sträcka och hastighet.
 	}
+
 	/**
 	 * 
 	 * @param force = The force that is measured in newton (N)
@@ -196,7 +225,19 @@ public class Main {
 		
 		double workAmount = force * distance;
 		return workAmount;
-		//16 de metoden som räknar ut storlekten på jobbet som utförs
+		//15 En metod som räknar ut arbete med hjälp av kraft och sträcka.
+	}
+	/**
+	 * 
+	 * @param work = The amount of work
+	 * @param time = The amount of time in sec
+	 * @return
+	 */
+	public static double power(double work, double time) {
+		
+		double powerAmount = work / time;
+		return powerAmount;
+		//16 En metod som räknar ut effekt med hjälp av arbete och tid.
 	}
 	/**
 	 * 
@@ -209,7 +250,7 @@ public class Main {
 		
 		double temp = solid.heatCapacity* mass * deltaT;
 		return temp;
-		// 17de metoden räknar ut temperaturen på ett föremål
+	    //17 En metod som räknar ut hur mycket energi som krävs för att värma ett visst material ett angivet antal grader.
 	}
 	/**
 	 * 
@@ -222,7 +263,7 @@ public class Main {
 		
 		double flame = fluid.heatCapacity* mass * deltaT;
 		return flame;
-		//18de metoden som räknar ut mängden erergi som behövs för att värma ett föremål
+		//18 En metod som räknar ut hur mycket energi som krävs för att värma en viss massa vätska ett angivet antal grader.
 	}
 	/**
 	 * 
@@ -235,7 +276,7 @@ public class Main {
 		
 		double burn = gas.heatCapacity * mass * deltaT;
 		return burn; 
-		//19de metoden som räknar ut hur mycket energi som krävs för att värma en massa 
+		//19de En metod som räknar ut hur mycket energi som krävs för att värma en viss massa gas ett angivet antal grader.
 	}
 	/**
 	 * 
@@ -246,12 +287,95 @@ public class Main {
 		
 		double height = (Math.pow(Math.sin(1.570796),2 )* Math.pow(velocity, 2))/ (2*g_swe);
 		return height;
-		//20de metoden som räknar ut hur snabbt ett föremål kommer att färdas uppåt med en viss hastighet
+		//20 En metod som räknar ut hur högt ett föremål med en viss hastighet uppåt kommer.
+	}
+	/**
+	 * 
+	 * @param time = The time measured in seconds
+	 * @return acceleration = The change in speed over time
+	 */
+	public static double acceleration(double work, double time) {
+		double acceleration = work / time;
+		return acceleration;
+       // Fråga 6 / Egen metod 1
+	}
+	/**
+	 *  
+	 * @param kMpH =  Kilometers per hour 
+	 * @return 
+	 */
+	public static double kMpHConvert(double kMpH) {
+		double velocityMpS = kMpH / 3.6;
+		return velocityMpS;
+		//Fråga 6 / Egen metod 2
+	}
+	/**
+	 * 
+   	 * @param acceleration = The change in speed divided my time
+	 * @param mass = The mass of the object
+	 * @return 
+	 */
+	public static double force(double acceleration, double mass) {
+		double force = acceleration * mass;
+		return force;
+		//Fråga 6 / Egen metod 3
+	}
+	/**
+	 * 
+	 * @param time = The change in time
+	 * @param acceleration = The change in speed divided my time
+	 * @return 
+	 */
+	public static double distance(double time, double acceleration) {
+		double distance = (acceleration * Math.pow(time, 2)) / 2;
+		return distance;
+		//Fråga 6 / Egen metod 4
+	}
+	/**
+	 *
+	 * @param height = The height
+	 * @param mass = The mass of the object
+	 * @return 
+	 */
+	public static double bounceCount(double height, double mass) {
+		double potentialEnergy = mass * g_swe * height;
+		int bounceCount = 0;
+		double i = height;
+
+		while (i >= 0.5) {
+			potentialEnergy *= 0.99;
+			i = potentialEnergy / g_swe;
+			bounceCount++;
+		}
+			return bounceCount;
+			//Fråga 7 / Egen metod 5
+	}
+	
+	public static double joule(double newtonM) {
+		double joule = newtonM;
+		return joule;
+		//Egen metod 6 / fråga 1
+    }
+	
+	public static double newton(double kg) {
+		double weight = kg * g_swe;
+		return weight;
+		//Egen metod 7 / fråga 2
+	}
+	
+	public static double haste(double meterpersecond) {
+		double rate = meterpersecond * 3.6;
+		return rate;
+		
 	}
 	
 	
+	
+	
+	
+	
+	
 }
-
 
 
 		
