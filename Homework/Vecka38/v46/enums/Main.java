@@ -28,9 +28,10 @@ public class Main {
 		System.out.println(heat(FluidTable.WATER,1,10));
 		System.out.println(heat(GasTable.AIR,1,1));
 		System.out.println(velocityToHeight(9.82));
-		System.out.println(volumeToMass(SolidTable.IRON,6));
+		System.out.println(volumeToMass(SolidTable.IRON,6)); //* Här och neråt är frågorna
 		System.out.println(svtDistance(2.7,3000));
 		System.out.println(heat(FluidTable.WATER,4,78));
+		System.out.println(fluidPreassure(FluidTable.WATER,75));
 	}
 	/**
 	 * 
