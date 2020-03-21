@@ -1,53 +1,37 @@
+import java.util.Random;
 import java.util.Scanner;
 
-public class Sifferspel_Inlämmning {
-	
+public class Sifferspel {
 
 	static Scanner input = new Scanner(System.in);
+
 	static String spelarNamn = "";
-	static int spelarSvar;
-	static int SpelRegler;
+
+	static int svårhetsgrad;
+
 	
-	
-	
-	
-	
-	
+
 	public static void main(String[] args) {
 		talSpelet();
 
 	}
+
 	public static void talSpelet() {
 		System.out.println("Välkommen till talspelet!");
-		
+		SpelRegler();
 
 		System.out.println("Vad vill du heta?");
 		spelarNamn = input.nextLine();
+
+		System.out.println("Välj svårhetsgrad:\n 1(Lätt) \n 2(Medel) \n 3(Svår)");
+		while (true) {
+			System.out.println("Skriv in ett nummer mellan 1, 2 eller 3:");
+			svårhetsgrad = felhantering();
+			if (svårhetsgrad == 1 || svårhetsgrad == 2 || svårhetsgrad == 3) {
+				break;
+
+			}
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+
