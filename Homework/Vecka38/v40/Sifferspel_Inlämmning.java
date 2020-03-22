@@ -13,6 +13,7 @@ public class Sifferspel {
 	static int gissningar = 0;
 	static boolean svår = false;
 	static boolean medel = false;
+	static boolean lätt = false;
 	
 
 	
@@ -96,7 +97,17 @@ public static void spelarLedtråd(int spelarSvar) {
 			medel = true;
 
 		}
+		if (svårhetsgrad == 3) {
+			korrektSvar = rand.nextInt(201);
+			svår = true;
+		}
+	}
+	}
+	public static void SpelRegler() {
+		System.out.println("Spelet går ut på att du ska gissa dig fram till ett tal på så få gissningar som möjligt,\"\r\n" + 
+				"				+ \"du kan ändra svårhetsgrad som ändras spannet du gissar inom och antalet gissningar du har");
+	}
 }
-}
-}
+
+
 	
