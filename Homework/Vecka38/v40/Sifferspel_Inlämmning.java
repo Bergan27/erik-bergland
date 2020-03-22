@@ -4,10 +4,14 @@ import java.util.Scanner;
 public class Sifferspel {
 
 	static Scanner input = new Scanner(System.in);
-
+	static Random rand = new Random();
 	static String spelarNamn = "";
-
+	static String spelarNamn = "";
+	static int spelarSvar;
 	static int svårhetsgrad;
+	static int korrektSvar;
+	static int gissningar = 0;
+	
 
 	
 
@@ -32,6 +36,32 @@ public class Sifferspel {
 
 			}
 		}
+
+		randomiseratTal();
+
+		while (spelarSvar != korrektSvar) {
+			System.out.println("Skriv ett nummer: ");
+			spelarSvar = input.nextInt();
+			gissningar++;
+			spelarLedtråd(spelarSvar);
+
+		}
+
 	}
 }
+public static int felhantering() {
+	String DataFrånAnvändare = "";
+	while (true) {
+		DataFrånAnvändare = input.nextLine();
+		try {
+			return Integer.parseInt(DataFrånAnvändare);
+
+		} catch (Exception e) {
+			System.out.println("Felaktig input skriv in siffor");
+
+		}
+
+	}
+}
+
 
