@@ -64,4 +64,22 @@ public static int felhantering() {
 	}
 }
 
+public static void Resultat() {
+	while (true) {
+		int spelarVal = felhantering();
+		
+		
+			if (spelarVal == 1) {
+				talSpelet();
+			}else if(spelarVal == 2) {
+				System.exit(0);
+				
+			}
+			
+			else{
+				System.out.println("Skriv in 1 för att starta om");
+				System.out.println("Skriv in 2 för att stänga av");
+			}
+	}
+}
 
