@@ -11,6 +11,7 @@ public class Sifferspel {
 	static int svårhetsgrad;
 	static int korrektSvar;
 	static int gissningar = 0;
+	static boolean svår = false;
 	
 
 	
@@ -83,3 +84,12 @@ public static void Resultat() {
 	}
 }
 
+public static void spelarLedtråd(int spelarSvar) {
+	if (svår) {
+		if (gissningar == 6) {
+			System.out.println("Du har förlorat ");
+			Resultat();
+		}
+}
+}
+	
