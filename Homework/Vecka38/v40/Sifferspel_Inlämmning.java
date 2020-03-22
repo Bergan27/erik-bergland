@@ -12,6 +12,7 @@ public class Sifferspel {
 	static int korrektSvar;
 	static int gissningar = 0;
 	static boolean svår = false;
+	static boolean medel = false;
 	
 
 	
@@ -90,6 +91,12 @@ public static void spelarLedtråd(int spelarSvar) {
 			System.out.println("Du har förlorat ");
 			Resultat();
 		}
+		if (svårhetsgrad == 2) {
+			korrektSvar = rand.nextInt(151);
+			medel = true;
+
+		}
+}
 }
 }
 	
