@@ -1,8 +1,17 @@
+import java.util.Random;
+import java.util.Scanner;
 
 public class Hängagubben {
 
-	static int SpelarensVal;
 	static String SpelarensSvar;
+	static int SpelarensVal;
+	static Scanner input = new Scanner(System.in);
+	static Random SlumpmässigtTal = new Random();
+	static char[] OsynligtOrd;
+	static String HemligtOrd;
+	static String[] LättaOrd = { "Bok", "Väg", "Våg", "Hår", "Hus", "Löv" };
+	static String[] MedelsvåraOrd = {"Dator","Skrivbord", "Parkering", "Dörrmatta", "Lastbil" };
+	static String[] SvåraOrd = {"Katalysator","Anestesisjuksköterska", "Kamremssensor", "Kam"};
 
 	public static void main(String[] args) {
 		Välkommen();
@@ -22,6 +31,7 @@ public class Hängagubben {
 
 		System.out.println("Skriv en siffra:");
 		SpelarensSvar = input.nextLine();
+		SpeletBörjar();
 
 		if (SpelarensVal == 1) {
 
@@ -31,4 +41,23 @@ public class Hängagubben {
 		}
 
 	}
+
+	public static void SpeletBörjar() {
+		System.out.println("Välj en svårighetsgrad: 1 (lätt), 2 (medelsvår) eller 3 (svår).");
+		int svårhetsgrad = input.nextInt();
+		if (svårhetsgrad == 1) {
+			HemligtOrd = LättaOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
+			System.out.println(OsynligtOrd);
+
+		} else if (svårhetsgrad == 2) {
+			HemligtOrd = MedelsvåraOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
+			System.out.println(OsynligtOrd);
+		}
+
+		else if(svårhetsgrad == 3) {
+			HemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
+			System.out.println(OsynligtOrd);
+		}
+	}
+
 }
