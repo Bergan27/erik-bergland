@@ -10,8 +10,8 @@ public class Hängagubben {
 	static char[] OsynligtOrd;
 	static String HemligtOrd;
 	static String[] LättaOrd = { "Bok", "Väg", "Våg", "Hår", "Hus", "Löv" };
-	static String[] MedelsvåraOrd = {"Dator","Skrivbord", "Parkering", "Dörrmatta", "Lastbil" };
-	static String[] SvåraOrd = {"Katalysator","Anestesisjuksköterska", "Kamremssensor", "Kam"};
+	static String[] MedelsvåraOrd = { "Dator", "Skrivbord", "Parkering", "Dörrmatta", "Lastbil" };
+	static String[] SvåraOrd = { "Katalysator", "Anestesisjuksköterska", "Kamaxelsensor", "Uroterapeut" };
 
 	public static void main(String[] args) {
 		Välkommen();
@@ -54,9 +54,17 @@ public class Hängagubben {
 			System.out.println(OsynligtOrd);
 		}
 
-		else if(svårhetsgrad == 3) {
+		else if (svårhetsgrad == 3) {
 			HemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
 			System.out.println(OsynligtOrd);
+		}
+	}
+
+	public static void KonverteringAvOrd() {
+		OsynligtOrd = new char[HemligtOrd.length()];
+
+		for (int i = 0; i < HemligtOrd.length(); i++) {
+			OsynligtOrd[i] = '_';
 		}
 	}
 
