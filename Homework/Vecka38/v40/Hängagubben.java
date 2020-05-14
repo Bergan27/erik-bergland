@@ -16,6 +16,8 @@ public class Hängagubben {
 	public static void main(String[] args) {
 		Välkommen();
 		StartaSpelet();
+		KonverteringAvOrd();
+		SpeletBörjar();
 
 	}
 
@@ -31,10 +33,10 @@ public class Hängagubben {
 
 		System.out.println("Skriv en siffra:");
 		SpelarensSvar = input.nextLine();
-		SpeletBörjar();
+		
 
 		if (SpelarensVal == 1) {
-
+			SpeletBörjar();
 		} else if (SpelarensVal == 2) {
 			System.exit(0);
 
@@ -50,12 +52,12 @@ public class Hängagubben {
 			System.out.println(OsynligtOrd);
 
 		} else if (svårhetsgrad == 2) {
-			HemligtOrd = MedelsvåraOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
+			HemligtOrd = MedelsvåraOrd[SlumpmässigtTal.nextInt(MedelsvåraOrd.length)];
 			System.out.println(OsynligtOrd);
 		}
 
 		else if (svårhetsgrad == 3) {
-			HemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
+			HemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(SvåraOrd.length)];
 			System.out.println(OsynligtOrd);
 		}
 	}
@@ -67,5 +69,7 @@ public class Hängagubben {
 			OsynligtOrd[i] = '_';
 		}
 	}
+
+	
 
 }
