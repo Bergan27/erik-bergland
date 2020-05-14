@@ -1,8 +1,12 @@
 
 public class Hängagubben {
 
+	static int SpelarensVal;
+	static String SpelarensSvar;
+
 	public static void main(String[] args) {
 		Välkommen();
+		StartaSpelet();
 
 	}
 
@@ -12,4 +16,19 @@ public class Hängagubben {
 				+ "Om du lyckas innan gubben hängs så vinner du och gubben överlever");
 	}
 
+	public static void StartaSpelet() {
+
+		System.out.println("Tryck 1 för att starta \n Tryck 2 för att avsluta:");
+
+		System.out.println("Skriv en siffra:");
+		SpelarensSvar = input.nextLine();
+
+		if (SpelarensVal == 1) {
+
+		} else if (SpelarensVal == 2) {
+			System.exit(0);
+
+		}
+
+	}
 }
