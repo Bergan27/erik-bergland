@@ -1,8 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class Hängagubben {
-
+	
+	
+	static ArrayList<Character> Ord = new ArrayList<Character>();
 	static String SpelarensSvar;
 	static int SpelarensVal;
 	static Scanner input = new Scanner(System.in);
@@ -33,7 +37,6 @@ public class Hängagubben {
 
 		System.out.println("Skriv en siffra:");
 		SpelarensSvar = input.nextLine();
-		
 
 		if (SpelarensVal == 1) {
 			SpeletBörjar();
@@ -63,13 +66,10 @@ public class Hängagubben {
 	}
 
 	public static void KonverteringAvOrd() {
-		OsynligtOrd = new char[HemligtOrd.length()];
-
-		for (int i = 0; i < HemligtOrd.length(); i++) {
-			OsynligtOrd[i] = '_';
+		for (int i = 0; i<HemligtOrd.length(); i++) {
+			Ord.add('_');
 		}
 	}
-
 	
-
+	
 }
