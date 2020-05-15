@@ -70,6 +70,15 @@ public class Hängagubben {
 			Ord.add('_');
 		}
 	}
+	public static void KontrollerarBokstav() {
+		if(HemligtOrd.contains(SpelarensSvar.charAt(0))){
+			
+			for(int i = 0; i < HemligtOrd.length(); i++); {
+				
+				OsynligtOrd.set(i , SpelarensSvar.charAt(0));
+			}
+		}
+	}
 	
 	
 }
