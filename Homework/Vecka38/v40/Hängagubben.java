@@ -100,4 +100,13 @@ public class Hängagubben {
 
 		}
 	}
+
+//En metod som väljer ut ett randomiserat ord 
+	public static void fyllListaMedBokstäver() {
+		Ord.clear();
+		for (int i = 0; i < hemligtOrd.length(); i++) {
+			Ord.add(hemligtOrd.charAt(i));
+		}
+
+	}
 }
