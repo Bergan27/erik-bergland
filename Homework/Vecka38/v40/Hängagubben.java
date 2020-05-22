@@ -1,11 +1,20 @@
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Hängagubben {
 
 	static String spelarensSvar;
+	static ArrayList<Character> Ord = new ArrayList<Character>();
 	static int spelarensVal;
 	static int gissningar = 0;
 	static Scanner input = new Scanner(System.in);
+	static Random SlumpmässigtTal = new Random();
+	static ArrayList<Character> osynligtOrd = new ArrayList<>();
+	static String hemligtOrd;
+	static String[] LättaOrd = { "bok", "väg", "våg", "vår", "hus", "löv" };
+	static String[] MedelsvåraOrd = { "dator", "skrivbord", "parkering", "dörrmatta", "lastbil" };
+	static String[] SvåraOrd = { "katalysator", "anestesisjuksköterska", "kamaxelsensor", "uroterapeut" };
 	
 	public static void main(String[] args) {
 		Välkommen();
@@ -44,4 +53,21 @@ public class Hängagubben {
 			}
 		}
 	}
+	//En metod som låter dig välja svårhetsgrad på spelet
+		public static void valAvSvårhetsgrad() {
+			System.out.println("Välj en svårighetsgrad: 1 (lätt), 2 (medelsvår) eller 3 (svår).");
+			int svårhetsgrad = input.nextInt();
+			if (svårhetsgrad == 1) {
+				hemligtOrd = LättaOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
+
+			} else if (svårhetsgrad == 2) {
+				hemligtOrd = MedelsvåraOrd[SlumpmässigtTal.nextInt(MedelsvåraOrd.length)];
+
+			}
+
+			else if (svårhetsgrad == 3) {
+				hemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(SvåraOrd.length)];
+
+			}
+		}
 }
