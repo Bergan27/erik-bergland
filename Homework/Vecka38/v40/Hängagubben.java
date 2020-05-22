@@ -117,4 +117,13 @@ public class Hängagubben {
 		}
 		System.out.println(osynligtOrd);
 	}
+	//En metod som kontrollerar att bokstaven man gissat på finns med i ordet 
+		public static void detÄrEnBokstav() {
+			if (Ord.contains(spelarensSvar.charAt(0))) {
+				läggTillBokstäver();
+			} else {
+				System.out.println("Bokstaven finns inte med i ordet!");
+				gissningar++;
+			}
+		}
 }
