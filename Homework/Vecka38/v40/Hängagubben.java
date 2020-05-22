@@ -70,4 +70,34 @@ public class Hängagubben {
 
 			}
 		}
+
+//en metod som startar spelet på den svårhetsgrad du valt samt stänger av spelet om du gissat fel för många gånger 
+	public static void SpeletBörjar() {
+		valAvSvårhetsgrad();
+		fyllListaMedBokstäver();
+		fyllListaMedUnderstreck();
+
+		while (true) {
+			spelarensSvar = input.nextLine();
+			if (spelarensSvar.length() == 1) {
+				detÄrEnBokstav();
+
+			} else {
+				continue;
+			}
+
+			if (!finnsDetKvarUnderstreck()) {
+				System.out.println("Du har vunnit!");
+				StartaSpelet();
+				break;
+			}
+
+			if (gissningar == 6) {
+				System.out.println("Du har förlorat");
+				StartaSpelet();
+				break;
+			}
+
+		}
+	}
 }
