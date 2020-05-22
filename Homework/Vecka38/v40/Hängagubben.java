@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.lang.NumberFormatException;
 
 public class Hängagubben {
 
@@ -138,5 +139,14 @@ public class Hängagubben {
 				}
 				System.out.println(osynligtOrd);
 			}
+		}
+		//En metod som kontrollerar att siffror inte skrivs in i stängar
+		public static int fåPositivtTalFrånSträng(String sträng) {
+			try {
+				return Integer.parseInt(sträng);
+			} catch (NumberFormatException exception) {
+				return -1;
+			}
+
 		}
 }
