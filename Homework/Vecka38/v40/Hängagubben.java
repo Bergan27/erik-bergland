@@ -1,6 +1,6 @@
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.lang.NumberFormatException;
 
 public class Hängagubben {
@@ -53,7 +53,7 @@ public class Hängagubben {
 		}
 	}
 
-	// En metod som låter dig välja svårhetsgrad på spelet
+//En metod som låter dig välja svårhetsgrad på spelet
 	public static void valAvSvårhetsgrad() {
 		System.out.println("Välj en svårighetsgrad: 1 (lätt), 2 (medelsvår) eller 3 (svår).");
 		int svårhetsgrad = input.nextInt();
@@ -110,7 +110,7 @@ public class Hängagubben {
 
 	}
 
-	// En metod som byter ut det randomiserade ordet mot understräck
+//En metod som byter ut det randomiserade ordet mot understräck
 	public static void fyllListaMedUnderstreck() {
 		osynligtOrd.clear();
 		for (int i = 0; i < hemligtOrd.length(); i++) {
@@ -118,35 +118,47 @@ public class Hängagubben {
 		}
 		System.out.println(osynligtOrd);
 	}
-	//En metod som kontrollerar att bokstaven man gissat på finns med i ordet 
-		public static void detÄrEnBokstav() {
-			if (Ord.contains(spelarensSvar.charAt(0))) {
-				läggTillBokstäver();
-			} else {
-				System.out.println("Bokstaven finns inte med i ordet!");
-				gissningar++;
-			}
-		}
-		//En metod som fyller en lista med ord 
-		public static void läggTillBokstäver() {
-			if (Ord.contains(spelarensSvar.charAt(0))) {
-				System.out.println("Bokstav finns i ordet!");
-				for (int i = 0; i < hemligtOrd.length(); i++) {
-					if (spelarensSvar.charAt(0) == hemligtOrd.charAt(i)) {
-						osynligtOrd.set(i, spelarensSvar.charAt(0));
-					}
 
+//En metod som kontrollerar att bokstaven man gissat på finns med i ordet 
+	public static void detÄrEnBokstav() {
+		if (Ord.contains(spelarensSvar.charAt(0))) {
+			läggTillBokstäver();
+		} else {
+			System.out.println("Bokstaven finns inte med i ordet!");
+			gissningar++;
+		}
+	}
+
+//En metod som fyller en lista med ord 
+	public static void läggTillBokstäver() {
+		if (Ord.contains(spelarensSvar.charAt(0))) {
+			System.out.println("Bokstav finns i ordet!");
+			for (int i = 0; i < hemligtOrd.length(); i++) {
+				if (spelarensSvar.charAt(0) == hemligtOrd.charAt(i)) {
+					osynligtOrd.set(i, spelarensSvar.charAt(0));
 				}
-				System.out.println(osynligtOrd);
-			}
-		}
-		//En metod som kontrollerar att siffror inte skrivs in i stängar
-		public static int fåPositivtTalFrånSträng(String sträng) {
-			try {
-				return Integer.parseInt(sträng);
-			} catch (NumberFormatException exception) {
-				return -1;
-			}
 
+			}
+			System.out.println(osynligtOrd);
 		}
+	}
+
+	public static int fåPositivtTalFrånSträng(String sträng) {
+		try {
+			return Integer.parseInt(sträng);
+		} catch (NumberFormatException exception) {
+			return -1;
+		}
+
+	}
+
+//En metod som kollar om ordet är fullständigt
+	public static boolean finnsDetKvarUnderstreck() {
+		if (osynligtOrd.contains('_')) {
+			return true;
+		} else {
+
+			return false;
+		}
+	}
 }
