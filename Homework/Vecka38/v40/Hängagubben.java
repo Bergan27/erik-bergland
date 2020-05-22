@@ -15,7 +15,7 @@ public class Hängagubben {
 	static String[] LättaOrd = { "bok", "väg", "våg", "vår", "hus", "löv" };
 	static String[] MedelsvåraOrd = { "dator", "skrivbord", "parkering", "dörrmatta", "lastbil" };
 	static String[] SvåraOrd = { "katalysator", "anestesisjuksköterska", "kamaxelsensor", "uroterapeut" };
-	
+
 	public static void main(String[] args) {
 		Välkommen();
 		StartaSpelet();
@@ -28,8 +28,6 @@ public class Hängagubben {
 				+ " Du kommer att få gissa 6 gånger vad ordet är, om du inte lyckas innan det så hängs gubben och du förorar "
 				+ "Om du lyckas innan gubben hängs så vinner du och gubben överlever");
 	}
-
-
 
 //En metod som låter dig välja att antingen starta eller stänga av spelet
 	public static void StartaSpelet() {
@@ -53,23 +51,24 @@ public class Hängagubben {
 			}
 		}
 	}
-	//En metod som låter dig välja svårhetsgrad på spelet
-		public static void valAvSvårhetsgrad() {
-			System.out.println("Välj en svårighetsgrad: 1 (lätt), 2 (medelsvår) eller 3 (svår).");
-			int svårhetsgrad = input.nextInt();
-			if (svårhetsgrad == 1) {
-				hemligtOrd = LättaOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
 
-			} else if (svårhetsgrad == 2) {
-				hemligtOrd = MedelsvåraOrd[SlumpmässigtTal.nextInt(MedelsvåraOrd.length)];
+	// En metod som låter dig välja svårhetsgrad på spelet
+	public static void valAvSvårhetsgrad() {
+		System.out.println("Välj en svårighetsgrad: 1 (lätt), 2 (medelsvår) eller 3 (svår).");
+		int svårhetsgrad = input.nextInt();
+		if (svårhetsgrad == 1) {
+			hemligtOrd = LättaOrd[SlumpmässigtTal.nextInt(LättaOrd.length)];
 
-			}
+		} else if (svårhetsgrad == 2) {
+			hemligtOrd = MedelsvåraOrd[SlumpmässigtTal.nextInt(MedelsvåraOrd.length)];
 
-			else if (svårhetsgrad == 3) {
-				hemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(SvåraOrd.length)];
-
-			}
 		}
+
+		else if (svårhetsgrad == 3) {
+			hemligtOrd = SvåraOrd[SlumpmässigtTal.nextInt(SvåraOrd.length)];
+
+		}
+	}
 
 //en metod som startar spelet på den svårhetsgrad du valt samt stänger av spelet om du gissat fel för många gånger 
 	public static void SpeletBörjar() {
@@ -108,5 +107,14 @@ public class Hängagubben {
 			Ord.add(hemligtOrd.charAt(i));
 		}
 
+	}
+
+	// En metod som byter ut det randomiserade ordet mot understräck
+	public static void fyllListaMedUnderstreck() {
+		osynligtOrd.clear();
+		for (int i = 0; i < hemligtOrd.length(); i++) {
+			osynligtOrd.add('_');
+		}
+		System.out.println(osynligtOrd);
 	}
 }
