@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Hängagubben {
 
-	static String spelarensSvar;
 	static ArrayList<Character> Ord = new ArrayList<Character>();
+	static String spelarensSvar;
 	static int spelarensVal;
 	static int gissningar = 0;
 	static Scanner input = new Scanner(System.in);
@@ -124,6 +124,19 @@ public class Hängagubben {
 			} else {
 				System.out.println("Bokstaven finns inte med i ordet!");
 				gissningar++;
+			}
+		}
+		//En metod som fyller en lista med ord 
+		public static void läggTillBokstäver() {
+			if (Ord.contains(spelarensSvar.charAt(0))) {
+				System.out.println("Bokstav finns i ordet!");
+				for (int i = 0; i < hemligtOrd.length(); i++) {
+					if (spelarensSvar.charAt(0) == hemligtOrd.charAt(i)) {
+						osynligtOrd.set(i, spelarensSvar.charAt(0));
+					}
+
+				}
+				System.out.println(osynligtOrd);
 			}
 		}
 }
