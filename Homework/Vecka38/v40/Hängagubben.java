@@ -1,11 +1,15 @@
-
+import java.util.Scanner;
 
 public class Hängagubben {
 
+	static String spelarensSvar;
+	static int spelarensVal;
+	static int gissningar = 0;
+	static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		Välkommen();
-		
+		StartaSpelet();
 
 	}
 
@@ -17,4 +21,27 @@ public class Hängagubben {
 	}
 
 
+
+//En metod som låter dig välja att antingen starta eller stänga av spelet
+	public static void StartaSpelet() {
+		gissningar = 0;
+		System.out.println("Tryck 1 för att starta \n Tryck 2 för att avsluta:");
+		while (true) {
+
+			System.out.println("Skriv en siffra:");
+			spelarensSvar = input.nextLine();
+
+			spelarensVal = fåPositivtTalFrånSträng(spelarensSvar);
+
+			if (spelarensVal == 1) {
+				SpeletBörjar();
+				break;
+			} else if (spelarensVal == 2) {
+				System.exit(0);
+				break;
+			} else if (spelarensVal == -1) {
+				System.out.println("Skriv in ett tal mellan 1 och 2");
+			}
+		}
+	}
 }
